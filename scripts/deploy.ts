@@ -2,11 +2,10 @@ import { ethers } from "hardhat";
 
 async function main() {
   
-  
   // deploy first contract w/o lib
-  const Erc20Factory = await ethers.getContractFactory("MockERC20");
-  const erc20a = await Erc20Factory.deploy();
-  await erc20a.deployed();
+  const Erc20AFactory = await ethers.getContractFactory("MockERC20A");
+  const erc20A = await Erc20AFactory.deploy();
+  await erc20A.deployed();
   
   // deploy second contract w/ deployed lib
   const libFactory = await ethers.getContractFactory("MockLibrary");
@@ -20,8 +19,9 @@ async function main() {
   await erc20WithLib.deployed();
 
   // deploy third contract w/o lib
-  const erc20b = await Erc20Factory.deploy();
-  await erc20b.deployed();
+  const Erc20BFactory = await ethers.getContractFactory("MockERC20B");
+  const erc20B = await Erc20BFactory.deploy();
+  await erc20B.deployed();
 }
 
 // We recommend this pattern to be able to use async/await everywhere

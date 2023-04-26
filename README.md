@@ -1,13 +1,9 @@
 # Sample Hardhat Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+### Steps to reproduce
+- Create an Optimism fork from the tenderly dashboard used a previously indexed block
+- Set your .env
+- `npm install`
+- `npx hardhat run scripts/deploy.ts --network tenderly`
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-```
+All of your contracts will deploy, but anything deployed after verifying a contract with external libraries will not verify.
